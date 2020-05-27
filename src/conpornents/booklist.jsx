@@ -14,15 +14,16 @@ return(
         {
          bookData === null
          ?<p>now loding...</p>
-        :bookData.data.items.map((x,index) => <li> 
-          <p> key={index}>{x.volumeInfo.title} {x.volumeInfo.authors} </p>
-         
-          {x.volumeInfo.imageLinks === undefined
-           ? <p></p>  
-           :<img class="card-img" src={x.volumeInfo.imageLinks.thumbnail}/> }
-         
-         </li>)
-        
+        :bookData.data.items.map((x,index) =>  
+            
+             <div key={index}>      
+              <li> <p>  {x.volumeInfo.title} {x.volumeInfo.authors} </p>
+             {x.volumeInfo.imageLinks === undefined
+             ? <p></p>  
+             :<img class="card-img" src={x.volumeInfo.imageLinks.thumbnail}/> }
+            </li>
+            </div>)
+
          }
      
      </ul>
